@@ -1,8 +1,8 @@
 // Define Blynk parameters according to the project settings
 #define BLYNK_PRINT Serial
-#define BLYNK_TEMPLATE_ID "TMPL6cYStE1Hq"
-#define BLYNK_TEMPLATE_NAME "smartDustbin"
-#define BLYNK_AUTH_TOKEN "E1OcEuEqqPVYrwkS4rSNYGPKIRAmkPKA"
+#define BLYNK_TEMPLATE_ID "your template id here"
+#define BLYNK_TEMPLATE_NAME "your template name here"
+#define BLYNK_AUTH_TOKEN "your auth token here"
 
 // Include necessary libraries for WiFi and Blynk
 #include <WiFi.h>
@@ -11,8 +11,8 @@
 
 // Authentication information for wifi network to be used to connect to the blynk server
 char auth[] = BLYNK_AUTH_TOKEN;
-char ssid[] = "MyPublicWiFi";  // WiFi SSID
-char pass[] = "12345678";      // WiFi Password
+char ssid[] = "your wifi hotspot name here";  // WiFi SSID
+char pass[] = "your wifi password here";      // WiFi Password
 
 // Include the ESP32 Servo library
 #include <ESP32Servo.h>
