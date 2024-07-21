@@ -22,6 +22,7 @@ Servo servo;  // Create servo object
 long duration;
 int distance;
 int binLevel=0;
+bool lidOpen = false;  // Variable to track the state of the bin lid
 
 // Define pin numbers
 #define echoPin 32  // Echo pin for the ultrasonic sensor
@@ -69,15 +70,18 @@ void SMESensor() {
     // Control servo based on IR sensor reading
     if (ir == LOW) {
         servo.write(90);  // Open bin lid
+        lidOpen = true;
         Serial.println("Servo Angle: 90 (Bin lid opened)");
     } else {
         servo.write(0);  // Close bin lid
+        lidOpen = false;
         Serial.println("Servo Angle: 0 (Bin lid closed)");
     }
 
     // Send servo position to Blynk if connected
     if (blynkConnected) {
         Blynk.virtualWrite(V2, servo.read());
+        Blynk.virtualWrite(V3, lidOpen);  // Send lid state to Blynk
     }
 }
 
